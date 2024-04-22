@@ -1,0 +1,17 @@
+*{
+    margin-top:0px;
+}
+fieldset{
+    height:80px;
+    background-color:rgb(202, 10, 10);
+}
+button
+{
+    float:right;
+    margin-top:20px;
+}
+
+img{ 
+    width:80%;
+    height:400px;
+}
