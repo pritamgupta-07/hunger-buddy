@@ -10,8 +10,12 @@ const Restaurant = () => {
   let [rDetails, setRDetails] = useState(null);
   let [menus, setMenu] = useState([]);
   let [totalPrices, setTotalPrices] = useState(0);
+  let [name, setName] = useState("");
+  let [email, setEmail] = useState("");
+  let [address, setAddress] = useState("");
+  
   let getRestaurantDetails = async () => {
-    let url = `http://localhost:3030/api/get-restaurant-details-by-id/${id}`;
+    let url = `https://hunger-buddy-api.vercel.app/api/get-restaurant-details-by-id/${id}`;
     let response = await fetch(url, { method: "GET" });
     let data = await response.json();
     setRDetails(data.result);
@@ -227,8 +231,8 @@ const Restaurant = () => {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Enter full Name"
-                      value="Sakshi"
-                      onChange={() => {}}
+                      value= {name}
+                      onChange={(e) => {setName(e.target.value)}}
                     />
                   </div>
                   <div className="mb-3">
@@ -243,8 +247,8 @@ const Restaurant = () => {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="name@example.com"
-                      value="sakshi.kumari@cmr.edu.in"
-                      onChange={() => {}}
+                      value={email}
+                      onChange={(e) => {setEmail(e.target.value)}}
                     />
                   </div>
                   <div className="mb-3">
@@ -258,8 +262,8 @@ const Restaurant = () => {
                       className="form-control"
                       id="exampleFormControlTextarea1"
                       rows="3"
-                      value="Bangalore"
-                      onChange={() => {}}
+                      value={address}
+                      onChange={(e) => {setAddress(e.target.value)}}
                     ></textarea>
                   </div>
                 </div>
